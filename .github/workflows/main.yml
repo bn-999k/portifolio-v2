@@ -32,6 +32,6 @@ jobs:
         run: |
           echo "$KEY_PATH" > ./chave.pem
           chmod 600 ./chave.pem
-          scp -i ./chave.pem img/. ec2-user@3.82.45.78:/root/var/www/html/img
+          scp -i ./chave.pem img/* ec2-user@3.82.45.78:/var/www/html/img/
         env:
-          KEY_PATH: ${{ secrets.CHAVE_PEM }}
+          KEY_PATH: ${{ secrets.CHAVE_PEM }}
